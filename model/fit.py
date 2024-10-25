@@ -33,6 +33,5 @@ Y3 = ct_df.iloc[:, -1]
 X_train3,X_test3,Y_train3,Y_test3 = train_test_split(X3,Y3,test_size=0.3,random_state=3)
 model = LogisticRegression(solver='liblinear', C=1.0)
 model.fit(X_train3.values,Y_train3)
-print(model.predict([[40, 70000, 780, 0.15, 0]]))
 with open('Credit_pickle_file', 'wb') as pkl:
     pickle.dump(model, pkl)
