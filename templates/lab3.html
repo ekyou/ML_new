@@ -2,5 +2,14 @@
  
 {% block content %}
 {{ super() }}
-<p>Логистическая регрессия для классификации Ирисов
+<p>Логистическая регрессия одобрения кредита
+    <form action="/p_lab3" method="POST">
+    <p><input name="list1" type="text" class="form_text"> Возраст</p>
+    <p><input name="list2" class="form_text" type="text"> Кредитный рейтинг</p>
+    <p><input name="list3" class="form_text" type="text"> Соотношение суммы кредита и дохода</p>
+    <p><input name="list4" class="form_text" type="text"> Трудоустройство(Нет - 0; Да - 1)</p>
+    <input type="submit" class="form_btn" value="Узнать результат">
+    <h1>{{class_model}}</h1>
+    </p>
+</form>
 {% endblock %}
