@@ -32,7 +32,16 @@ def f_lab1():
 
 @app.route("/p_lab2")
 def f_lab2():
-    return render_template('lab2.html', title="Логистическая регрессия", menu=menu)
+    if request.method == 'GET':
+        return render_template('lab1.html', title="Линейная регрессия для рассчета размера обуви", menu=menu, class_model='')
+    if request.method == 'POST':
+        X_new = np.array([[float(request.form['list1']),
+                           float(request.form['list2']),
+                           float(request.form['list3']),
+                           ]])
+        pred = loaded_model_lab2.predict(X_new)
+        return render_template('lab1.html', title="Линейная регрессия для рассчета размера обуви", menu=menu,
+                               class_model=pred)
 
 
 @app.route("/p_lab3")

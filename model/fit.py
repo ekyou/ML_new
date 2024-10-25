@@ -22,5 +22,5 @@ Y2 = boots_df.iloc[:, -1]
 X_train2, X_test2, Y_train2, Y_text2 = train_test_split(X2, Y2, test_size=0.3, random_state=3)
 model = LinearRegression()
 model.fit(X_train2, Y_train2)
-with open('Boots_pickle_file', 'wb') as plk:
+with open('Boots_pickle_file', 'wb') as pkl:
     pickle.dump(model, pkl)
