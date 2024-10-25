@@ -2,5 +2,13 @@
  
 {% block content %}
 {{ super() }}
-<p>Логистическая регрессия для расчета стоимости жилья
+<p>Линейная регрессиия рассчета размера обуви
+    <form action="/p_lab2" method="POST">
+    <p><input name="list1" type="text" class="form_text"> Рост</p>
+    <p><input name="list2" class="form_text" type="text"> Вес</p>
+    <p><input name="list3" class="form_text" type="text">  Пол (0 - Ж; 1 - М)</p>
+    <input type="submit" class="form_btn" value="Узнать размер ботинка">
+    <h1>{{class_model}}</h1>
+    </p>
+</form>
 {% endblock %}
