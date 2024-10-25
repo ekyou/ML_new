@@ -9,7 +9,7 @@ menu = [{"name": "Лаба 1", "url": "p_knn"},
         {"name": "Лаба 2", "url": "p_lab2"},
         {"name": "Лаба 3", "url": "p_lab3"}]
 
-loaded_model_knn = pickle.load(open('model/Iris_pickle_file', 'rb'))
+loaded_model_knn = pickle.load(open('model/Sport_pickle_file', 'rb'))
 
 @app.route("/")
 def index():
@@ -24,10 +24,11 @@ def f_lab1():
         X_new = np.array([[float(request.form['list1']),
                            float(request.form['list2']),
                            float(request.form['list3']),
-                           float(request.form['list4'])]])
+                           ]])
         pred = loaded_model_knn.predict(X_new)
+        print(pred)
         return render_template('lab1.html', title="Метод k -ближайших соседей (KNN)", menu=menu,
-                               class_model="Это: " + pred)
+                               class_model=pred)
 
 @app.route("/p_lab2")
 def f_lab2():
