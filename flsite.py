@@ -55,6 +55,7 @@ def f_lab3():
                            float(request.form['list2']),
                            float(request.form['list3']),
                            float(request.form['list4']),
+                           float(request.form['list5']),
                            ]])
         pred = loaded_model_lab3.predict(X_new)
         return render_template('lab3.html', title="Логистическая регрессия одобрения кредита", menu=menu,
